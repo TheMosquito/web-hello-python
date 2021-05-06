@@ -3,7 +3,7 @@
 DOCKERHUB_ID:=ibmosquito
 SERVICE_NAME:="web-hello-python"
 SERVICE_VERSION:="1.0.0"
-PATTERN_NAME:="pattern-whatever"
+PATTERN_NAME:="pattern-web-hello-python"
 ARCH:="amd64"
  
 # Leave blank for open DockerHub containers
