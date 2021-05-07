@@ -17,6 +17,7 @@ When you are ready to try it inside Open Horizon:
 
 ```
 docker login
+hzn key create **yourcompany** **youremail**
 make build
 make push
 make publish-service
