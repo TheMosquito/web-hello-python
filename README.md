@@ -29,6 +29,6 @@ Once it is published, you can use:
 ```
 make register-pattern
 watch hzn agreement list
-...
+... (runs forever, so press Ctrl-C when you want to stop)
 make test
 ```
