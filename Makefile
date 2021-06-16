@@ -48,13 +48,16 @@ publish-pattern:
         PATTERN_NAME="$(PATTERN_NAME)" \
 	hzn exchange pattern publish -f pattern.json
 
-register-pattern:
-	hzn register --pattern "${HZN_ORG_ID}/$(PATTERN_NAME)"
-
 stop:
 	@docker rm -f ${SERVICE_NAME} >/dev/null 2>&1 || :
 
 clean:
 	@docker rmi -f $(DOCKERHUB_ID)/$(SERVICE_NAME):$(SERVICE_VERSION) >/dev/null 2>&1 || :
 
-.PHONY: build dev run push publish-service publish-pattern test stop clean
+agent-run:
+	hzn register --pattern "${HZN_ORG_ID}/$(PATTERN_NAME)"
+
+agent-stop:
+	hzn unregister -f
+
+.PHONY: build dev run push publish-service publish-pattern test stop clean agent-run agent-stop
