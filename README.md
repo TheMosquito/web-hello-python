@@ -24,11 +24,23 @@ make publish-service
 make publish-patterrn
 ```
 
-Once it is published, you can use:
+Once it is published, you can get the agent to deploy it:
 
 ```
-make register-pattern
+make agent-run
+```
+
+Then you can watch the agreement form, see the container run, then test it:
+
+```
 watch hzn agreement list
 ... (runs forever, so press Ctrl-C when you want to stop)
+docker ps
 make test
+```
+
+Then when you are done you can get the agent to stop running it:
+
+```
+make agent-stop
 ```
